@@ -1,0 +1,677 @@
+/* Import Vazir font from CDN as fallback if local fonts aren't available */
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
+
+@import "tailwindcss";
+
+:root {
+  /* Light Mode - Modern, Vibrant, High Contrast - STRONGER & BRIGHTER */
+  --background: #FFFFFF;
+  --foreground: #0A0F1C;
+  --foreground-secondary: #1A1F2E;
+  --foreground-muted: #3D4558;
+  
+  /* Purple Palette - Rich, Vibrant, and Strong */
+  --purple-50: #FAF5FF;
+  --purple-100: #F3E8FF;
+  --purple-200: #E9D5FF;
+  --purple-300: #D8B4FE;
+  --purple-400: #C084FC;
+  --purple-500: #A855F7;
+  --purple-600: #9333EA;
+  --purple-700: #7E22CE;
+  --purple-800: #6B21A8;
+  --purple-900: #581C87;
+  
+  /* Blue Palette - Fresh, Modern, and Bright */
+  --blue-50: #EFF6FF;
+  --blue-100: #DBEAFE;
+  --blue-200: #BFDBFE;
+  --blue-300: #93C5FD;
+  --blue-400: #60A5FA;
+  --blue-500: #3B82F6;
+  --blue-600: #2563EB;
+  --blue-700: #1D4ED8;
+  --blue-800: #1E40AF;
+  --blue-900: #1E3A8A;
+  
+  /* Legacy support - mapped to new palette */
+  --purple-light: var(--purple-200);
+  --purple-medium: var(--purple-400);
+  --purple-dark: var(--purple-600);
+  --blue-light: var(--blue-200);
+  --blue-medium: var(--blue-400);
+  --blue-dark: var(--blue-600);
+  
+  /* Surface Colors */
+  --surface: #FFFFFF;
+  --surface-elevated: #FFFFFF;
+  --surface-hover: #F8FAFC;
+  --border: #E2E8F0;
+  --border-strong: #CBD5E1;
+  
+  /* Accent Colors */
+  --accent-purple: var(--purple-600);
+  --accent-blue: var(--blue-600);
+  --accent-gradient: linear-gradient(135deg, var(--purple-600), var(--blue-600));
+}
+
+/* @theme is a valid Tailwind CSS v4 directive */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-purple-light: var(--purple-light);
+  --color-purple-medium: var(--purple-medium);
+  --color-purple-dark: var(--purple-dark);
+  --color-blue-light: var(--blue-light);
+  --color-blue-medium: var(--blue-medium);
+  --color-blue-dark: var(--blue-dark);
+  --font-english: var(--font-inter);
+  --font-farsi: var(--font-vazir);
+  --font-display: var(--font-playfair);
+}
+
+/* Dark mode styles - applied when .dark class is on html element */
+.dark {
+  --background: #030712;
+  --foreground: #F8FAFC;
+  --foreground-secondary: #E2E8F0;
+  --foreground-muted: #94A3B8;
+  
+  /* Purple Palette - Dark Mode */
+  --purple-50: #1E1B2E;
+  --purple-100: #2D1B3D;
+  --purple-200: #3D1F4C;
+  --purple-300: #5B2C6A;
+  --purple-400: #7B3D8A;
+  --purple-500: #9B5AAA;
+  --purple-600: #B873C7;
+  --purple-700: #C98FD4;
+  --purple-800: #D9ABE1;
+  --purple-900: #E9C7EE;
+  
+  /* Blue Palette - Dark Mode */
+  --blue-50: #0F172A;
+  --blue-100: #1E293B;
+  --blue-200: #1E3A5F;
+  --blue-300: #1E4A6F;
+  --blue-400: #2D5A7F;
+  --blue-500: #3C6A8F;
+  --blue-600: #4B7A9F;
+  --blue-700: #5A8AAF;
+  --blue-800: #6A9ABF;
+  --blue-900: #7AAACF;
+  
+  /* Legacy support - mapped to new palette */
+  --purple-light: var(--purple-400);
+  --purple-medium: var(--purple-500);
+  --purple-dark: var(--purple-600);
+  --blue-light: var(--blue-400);
+  --blue-medium: var(--blue-500);
+  --blue-dark: var(--blue-600);
+  
+  /* Surface Colors */
+  --surface: #0F172A;
+  --surface-elevated: #1E293B;
+  --surface-hover: #334155;
+  --border: #334155;
+  --border-strong: #475569;
+  
+  /* Accent Colors */
+  --accent-purple: var(--purple-500);
+  --accent-blue: var(--blue-500);
+  --accent-gradient: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+}
+
+/* Fallback for system preference when no theme is set */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #030712;
+    --foreground: #F8FAFC;
+    --foreground-secondary: #E2E8F0;
+    --foreground-muted: #94A3B8;
+    --purple-light: var(--purple-400);
+    --purple-medium: var(--purple-500);
+    --purple-dark: var(--purple-600);
+    --blue-light: var(--blue-400);
+    --blue-medium: var(--blue-500);
+    --blue-dark: var(--blue-600);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Font classes for language-specific styling */
+.font-english {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+.font-farsi {
+  font-family: var(--font-vazir), 'Vazir', 'Tahoma', 'Arial', sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+}
+
+/* Apply Farsi font when language is Farsi */
+html[lang="fa"] body,
+html[dir="rtl"] body {
+  font-family: var(--font-vazir), 'Vazir', 'Tahoma', 'Arial', sans-serif;
+}
+
+/* Apply English font when language is English */
+html[lang="en"] body,
+html[dir="ltr"] body {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+/* Text animation keyframes */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Letter spacing for better readability */
+.font-farsi {
+  letter-spacing: 0.02em;
+}
+
+.font-english {
+  letter-spacing: -0.01em;
+}
+
+/* Neon Glow Effects */
+@keyframes neon-pulse {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes neon-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(147, 51, 234, 0.5),
+                0 0 10px rgba(147, 51, 234, 0.3),
+                0 0 15px rgba(147, 51, 234, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.8),
+                0 0 20px rgba(147, 51, 234, 0.6),
+                0 0 30px rgba(147, 51, 234, 0.4);
+  }
+}
+
+@keyframes neon-glow-blue {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.5),
+                0 0 10px rgba(37, 99, 235, 0.3),
+                0 0 15px rgba(37, 99, 235, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.8),
+                0 0 20px rgba(37, 99, 235, 0.6),
+                0 0 30px rgba(37, 99, 235, 0.4);
+  }
+}
+
+@keyframes neon-border {
+  0%, 100% {
+    border-color: rgba(147, 51, 234, 0.5);
+    box-shadow: 0 0 5px rgba(147, 51, 234, 0.3),
+                inset 0 0 5px rgba(147, 51, 234, 0.1);
+  }
+  50% {
+    border-color: rgba(147, 51, 234, 0.8);
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.5),
+                inset 0 0 10px rgba(147, 51, 234, 0.2);
+  }
+}
+
+/* Neon utility classes */
+.neon-glow {
+  box-shadow: 0 0 10px rgba(147, 51, 234, 0.5),
+              0 0 20px rgba(147, 51, 234, 0.3),
+              0 0 30px rgba(147, 51, 234, 0.2);
+}
+
+.neon-glow-blue {
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5),
+              0 0 20px rgba(37, 99, 235, 0.3),
+              0 0 30px rgba(37, 99, 235, 0.2);
+}
+
+.neon-glow-pulse {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+.neon-border {
+  border-color: rgba(147, 51, 234, 0.6);
+  box-shadow: 0 0 8px rgba(147, 51, 234, 0.4),
+              inset 0 0 8px rgba(147, 51, 234, 0.1);
+}
+
+.neon-border-pulse {
+  animation: neon-border 2s ease-in-out infinite;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px rgba(147, 51, 234, 0.8),
+               0 0 10px rgba(147, 51, 234, 0.6),
+               0 0 15px rgba(147, 51, 234, 0.4);
+}
+
+.neon-text-blue {
+  text-shadow: 0 0 5px rgba(37, 99, 235, 0.8),
+               0 0 10px rgba(37, 99, 235, 0.6),
+               0 0 15px rgba(37, 99, 235, 0.4);
+}
+
+/* Dark mode neon adjustments */
+.dark .neon-glow {
+  box-shadow: 0 0 15px rgba(196, 181, 253, 0.6),
+              0 0 30px rgba(196, 181, 253, 0.4),
+              0 0 45px rgba(196, 181, 253, 0.3);
+}
+
+.dark .neon-glow-blue {
+  box-shadow: 0 0 15px rgba(147, 197, 253, 0.6),
+              0 0 30px rgba(147, 197, 253, 0.4),
+              0 0 45px rgba(147, 197, 253, 0.3);
+}
+
+.dark .neon-border {
+  border-color: rgba(196, 181, 253, 0.7);
+  box-shadow: 0 0 10px rgba(196, 181, 253, 0.5),
+              inset 0 0 10px rgba(196, 181, 253, 0.2);
+}
+
+.dark .neon-text {
+  text-shadow: 0 0 8px rgba(196, 181, 253, 0.9),
+               0 0 15px rgba(196, 181, 253, 0.7),
+               0 0 20px rgba(196, 181, 253, 0.5);
+}
+
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="ltr"] {
+  direction: ltr;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--purple-600), var(--blue-600));
+}
+
+/* Placeholder text colors */
+::placeholder {
+  color: var(--foreground-muted);
+  opacity: 0.6;
+}
+
+.dark ::placeholder {
+  color: var(--foreground-muted);
+  opacity: 0.7;
+}
+
+/* Input and textarea focus states */
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Ensure all text is readable in both modes */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--foreground);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--foreground-secondary);
+  line-height: 1.7;
+}
+
+/* Links */
+a {
+  color: inherit;
+}
+
+/* Selection colors */
+::selection {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(37, 99, 235, 0.3));
+  color: var(--foreground);
+}
+
+.dark ::selection {
+  background: linear-gradient(135deg, rgba(155, 90, 170, 0.4), rgba(60, 106, 143, 0.4));
+  color: var(--foreground);
+}
+
+/* ============================================
+   AB TEST VARIANTS - UI/UX DIFFERENCES
+   ============================================ */
+
+/* VARIANT A (Baseline) - Current Design */
+body[data-variant="A"] {
+  /* Baseline spacing and typography */
+  --section-padding: 5rem;
+  --card-spacing: 1.5rem;
+  --border-radius: 1rem;
+  --transition-speed: 0.3s;
+}
+
+/* VARIANT B (Enhanced) - Improved UI/UX */
+body[data-variant="B"] {
+  /* Enhanced spacing for better visual hierarchy */
+  --section-padding: 6rem;
+  --card-spacing: 2rem;
+  --border-radius: 1.5rem;
+  --transition-speed: 0.4s;
+  
+  /* Improved typography scale */
+  --text-scale: 1.05;
+}
+
+/* Variant B: Enhanced Hero Section */
+body[data-variant="B"] #home {
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+}
+
+body[data-variant="B"] #home h1 {
+  font-size: clamp(3rem, 8vw, 9rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+body[data-variant="B"] #home .text-xl {
+  font-size: 1.35rem;
+  line-height: 1.8;
+  max-width: 42rem;
+}
+
+/* Variant B: Enhanced Navigation */
+body[data-variant="B"] nav {
+  backdrop-filter: blur(12px);
+  border-bottom-width: 1px;
+}
+
+body[data-variant="B"] nav button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body[data-variant="B"] nav button:hover {
+  background: rgba(139, 92, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Variant B: Enhanced Portfolio Cards */
+body[data-variant="B"] #portfolio .group {
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body[data-variant="B"] #portfolio .group:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+body[data-variant="B"] #portfolio button {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Variant B: Enhanced Contact Form */
+body[data-variant="B"] #contact form {
+  gap: 2rem;
+}
+
+body[data-variant="B"] #contact input,
+body[data-variant="B"] #contact textarea {
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  border-width: 2px;
+  transition: all 0.3s ease;
+}
+
+body[data-variant="B"] #contact input:focus,
+body[data-variant="B"] #contact textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(139, 92, 246, 0.15);
+  border-color: rgb(139, 92, 246);
+}
+
+body[data-variant="B"] #contact button[type="submit"] {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Variant B: Enhanced Buttons */
+body[data-variant="B"] button,
+body[data-variant="B"] a[role="button"] {
+  position: relative;
+  overflow: hidden;
+}
+
+body[data-variant="B"] button::before,
+body[data-variant="B"] a[role="button"]::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+body[data-variant="B"] button:hover::before,
+body[data-variant="B"] a[role="button"]:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Variant B: Enhanced Spacing */
+body[data-variant="B"] section {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+/* Variant B: Better Visual Hierarchy */
+body[data-variant="B"] h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+body[data-variant="B"] h3 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Variant B: Enhanced Color Contrast */
+body[data-variant="B"] .text-gray-600 {
+  color: rgb(75, 85, 99);
+}
+
+.dark body[data-variant="B"] .text-gray-400 {
+  color: rgb(209, 213, 219);
+}
+
+/* Variant B: Smoother Animations */
+body[data-variant="B"] * {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Variant B: Enhanced Focus States for Accessibility */
+body[data-variant="B"] button:focus-visible,
+body[data-variant="B"] a:focus-visible,
+body[data-variant="B"] input:focus-visible,
+body[data-variant="B"] textarea:focus-visible {
+  outline: 3px solid rgba(139, 92, 246, 0.5);
+  outline-offset: 2px;
+}
+
+/* Variant B: Better Mobile Experience */
+@media (max-width: 768px) {
+  body[data-variant="B"] #home {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+  
+  body[data-variant="B"] section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  body[data-variant="B"] #portfolio .group:hover {
+    transform: translateY(-8px) scale(1.01);
+  }
+}
+
+/* ============================================
+   THEME COLOR CONSISTENCY IMPROVEMENTS
+   ============================================ */
+
+/* Consistent Purple/Blue Gradient Usage */
+.bg-gradient-purple-blue {
+  background: linear-gradient(135deg, rgb(139, 92, 246), rgb(59, 130, 246), rgb(139, 92, 246));
+}
+
+.dark .bg-gradient-purple-blue {
+  background: linear-gradient(135deg, rgb(168, 85, 247), rgb(96, 165, 250), rgb(168, 85, 247));
+}
+
+/* Enhanced Text Colors for Better Contrast */
+.text-purple-primary {
+  color: rgb(139, 92, 246);
+}
+
+.dark .text-purple-primary {
+  color: rgb(196, 181, 253);
+}
+
+.text-blue-primary {
+  color: rgb(59, 130, 246);
+}
+
+.dark .text-blue-primary {
+  color: rgb(147, 197, 253);
+}
+
+/* Consistent Border Colors */
+.border-purple-theme {
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.dark .border-purple-theme {
+  border-color: rgba(196, 181, 253, 0.3);
+}
+
+.border-blue-theme {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.dark .border-blue-theme {
+  border-color: rgba(147, 197, 253, 0.3);
+}
+
+/* Consistent Shadow Colors */
+.shadow-purple-theme {
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.15);
+}
+
+.dark .shadow-purple-theme {
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.25);
+}
+
+/* Better Background Gradients for Sections */
+.bg-section-light {
+  background: linear-gradient(135deg, rgb(250, 245, 255), rgb(239, 246, 255), rgb(250, 245, 255));
+}
+
+.bg-section-dark {
+  background: linear-gradient(135deg, rgb(3, 7, 18), rgb(30, 27, 75), rgb(3, 7, 18));
+}
+
+/* Improved Card Backgrounds */
+.card-bg-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.card-bg-dark {
+  background: rgba(31, 41, 55, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+/* Consistent Hover States */
+.hover-purple-light:hover {
+  background-color: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.dark .hover-purple-light:hover {
+  background-color: rgba(168, 85, 247, 0.15);
+  border-color: rgba(196, 181, 253, 0.4);
+}
+
+.hover-blue-light:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.dark .hover-blue-light:hover {
+  background-color: rgba(96, 165, 250, 0.15);
+  border-color: rgba(147, 197, 253, 0.4);
+}

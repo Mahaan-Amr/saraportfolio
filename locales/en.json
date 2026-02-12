@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "timeline": "Timeline",
+    "music": "Music",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "SARA",
+    "nickname": "Vanellope",
+    "title": "Creative Animator & Graphic Designer",
+    "subtitle": "Professional Editor & Content Creator",
+    "description": "Hey! I'm Sara (aka Vanellope) - Bringing stories to life through animation, design, and visual storytelling. Fueled by epic soundtracks and cinematic magic!",
+    "cta": "View My Work"
+  },
+  "about": {
+    "title": "About Sara",
+    "subtitle": "The Story Behind the Glitch",
+    "description": "I'm Sara, but you can call me Vanellope! 🎮✨ I'm a passionate animator and graphic designer who lives and breathes visual storytelling. When I'm not creating animations, you'll find me lost in epic soundtracks from Coco, Interstellar, and symphonic metal that fuels my creativity. I believe every frame tells a story, and every story deserves an epic soundtrack!",
+    "years": "Years of Experience",
+    "projects": "Projects Completed",
+    "clients": "Happy Clients",
+    "passions": "My Passions",
+    "music": "Music Lover",
+    "soundtracks": "Soundtrack Enthusiast",
+    "animation": "Animation Addict"
+  },
+  "skills": {
+    "title": "Expertise & Tools",
+    "subtitle": "Mastering the art of visual storytelling",
+    "premiere": "Adobe Premiere Pro",
+    "afterEffects": "Adobe After Effects",
+    "moho": "Moho Animation",
+    "tvPaint": "TVPaint Animation",
+    "pencil2d": "Pencil2D",
+    "3dmax": "3ds Max",
+    "photoshop": "Adobe Photoshop",
+    "contentCreation": "Content Creation"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Showcasing creative excellence",
+    "viewProject": "View Project",
+    "categories": {
+      "all": "All",
+      "animation": "Animation",
+      "graphicDesign": "Graphic Design",
+      "videoEditing": "Video Editing",
+      "content": "Content Creation"
+    }
+  },
+  "timeline": {
+    "title": "Career Journey",
+    "subtitle": "My professional path",
+    "location": "Tehran, Iran",
+    "items": {
+      "2020": {
+        "title": "Started Animation Journey",
+        "description": "Began professional career in animation and graphic design"
+      },
+      "2021": {
+        "title": "Mastered Video Editing",
+        "description": "Became expert in Premiere Pro and After Effects"
+      },
+      "2022": {
+        "title": "3D Animation Expertise",
+        "description": "Advanced skills in 3ds Max and 3D modeling"
+      },
+      "2023": {
+        "title": "Content Creation Focus",
+        "description": "Specialized in creative content creation and storytelling"
+      },
+      "2024": {
+        "title": "Professional Recognition",
+        "description": "Established as leading animator and graphic designer"
+      }
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Let's create something amazing together",
+    "email": "Email",
+    "message": "Message",
+    "placeholderEmail": "your.email@example.com",
+    "placeholderMessage": "Your message...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Please try again."
+  },
+  "footer": {
+    "description": "Creative Animator & Graphic Designer bringing stories to life through animation and design.",
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "rights": "All rights reserved",
+    "madeWith": "Made with",
+    "by": "by Sara (Vanellope)",
+    "scrollToTop": "Scroll to top",
+    "social": {
+      "email": "Email",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    }
+  },
+  "music": {
+    "title": "Soundtrack of My Life",
+    "subtitle": "The music that fuels my creativity",
+    "metal": "Metal & Rock",
+    "symphonic": "Symphonic Metal",
+    "soundtracks": "Cinematic Soundtracks",
+    "favorites": "My Favorites",
+    "coco": "Coco Soundtrack",
+    "interstellar": "Interstellar Soundtrack",
+    "animation": "Animation Soundtracks",
+    "description": "Music is the heartbeat of my creative process. From the powerful riffs of symphonic metal to the emotional depth of cinematic soundtracks, every project I create is inspired by the music I love.",
+    "metalDesc": "Powerful riffs and epic melodies",
+    "symphonicDesc": "Orchestral metal fusion",
+    "soundtracksDesc": "Cinematic masterpieces",
+    "animationDesc": "Animation soundtracks",
+    "symphonicMetal": "Symphonic Metal",
+    "progressiveRock": "Progressive Rock",
+    "powerMetal": "Power Metal",
+    "epicOrchestrations": "Epic orchestrations",
+    "metalSymphonies": "Metal symphonies",
+    "pixarScores": "Pixar scores",
+    "studioGhibli": "Studio Ghibli",
+    "disneyClassics": "Disney classics"
+  }
+}
+
